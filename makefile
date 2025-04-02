@@ -10,10 +10,11 @@ CFLAGS = -Wall -Wextra -pedantic -std=c99 -Ifunctions
 # Diretórios
 SRC_DIR = src
 FUNC_DIR = functions
+VIEW_DIR = view
 
 # Arquivos fonte
-C_SOURCES = $(wildcard $(SRC_DIR)/*.c $(FUNC_DIR)/*.c)
-H_SOURCES = $(wildcard $(FUNC_DIR)/*.h)
+C_SOURCES = $(wildcard $(SRC_DIR)/*.c $(FUNC_DIR)/*.c $(VIEW_DIR)/*.c)
+H_SOURCES = $(wildcard $(FUNC_DIR)/*.h $(VIEW_DIR)/*.h)
 
 # Variável para limpeza
 RM = rm -f
