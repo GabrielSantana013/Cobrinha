@@ -20,6 +20,8 @@ int main(){
     ptrGameOver = &gameOver;
     ptrBufferScreen = bufferScreen;
 
+    menu(ptrBufferScreen);
+
     
     gameStart(ptrSnake, ptrFood, ptrBufferScreen);
     drawScreen(ptrSnake, ptrFood, ptrBufferScreen, ptrScore);

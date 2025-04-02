@@ -40,9 +40,7 @@ typedef struct{
 
 #endif
 
-void gameStart(Snake *ptrSnake, Food *ptrFood, char (*ptrBufferScreen)[WIDTH]);
-void drawScreen(Snake *ptrSnake, Food *ptrFood,  char (*ptrBufferScreen)[WIDTH], int *score);
+
 void updateSnake(Snake *ptrSnake, Food *ptrFood, bool *gameOver, int *score);
 void snakeMove(Snake *ptrSnake, bool *gameOver);
 void spawnFood(Food *ptrFood);
-

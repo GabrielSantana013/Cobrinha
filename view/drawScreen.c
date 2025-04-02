@@ -41,7 +41,6 @@ void drawScreen(Snake *ptrSnake, Food *ptrFood, char (*ptrBufferScreen)[WIDTH], 
         }
     }
 
-
     mvprintw(HEIGHT, 0, "Score: %d", *score);
     refresh();
 
