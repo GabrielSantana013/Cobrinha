@@ -1,8 +1,8 @@
 #include <ncurses.h>
 
 
-#define WIDTH 40
-#define HEIGHT 20
+#define WIDTH 60
+#define HEIGHT 30
 #define MAX_SIZE 100
 #define DELAYMS 100
 #define WALL '#'

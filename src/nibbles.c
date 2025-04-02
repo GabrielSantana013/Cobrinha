@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdbool.h>
 #include "../functions/functions.h"
+#include "../view/view.h"
 
 
 int main(){
@@ -20,7 +21,7 @@ int main(){
     ptrGameOver = &gameOver;
     ptrBufferScreen = bufferScreen;
 
-    menu(ptrBufferScreen);
+    menu();
 
     
     gameStart(ptrSnake, ptrFood, ptrBufferScreen);
@@ -29,7 +30,7 @@ int main(){
         drawScreen(ptrSnake, ptrFood, ptrBufferScreen, ptrScore);
         updateSnake(ptrSnake, ptrFood, ptrGameOver, ptrScore);
         snakeMove(ptrSnake, ptrGameOver);
-        napms(DELAYMS); //delay    
+        napms(DELAYMS); //delay
     }
     endwin();
 
