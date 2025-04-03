@@ -29,14 +29,20 @@ void menu(){
     refresh();
     
     // Posicionamento do logo
-    int start_x = 12;  
-    int start_y = 1;   
+    int start_logo_x = 12;  
+    int start_logo_y = 1;   
 
     for (int i = 0; i < 7; i++) {
-        mvprintw(start_y + i, start_x, "%s", menuLogo[i]);
+        mvprintw(start_logo_y + i, start_logo_x, "%s", menuLogo[i]);
     }
 
-    
+    int start_menu_x = 22;
+    int start_menu_y = 8;
+
+    mvprintw(start_menu_y + 8, start_menu_x + 1, "Jogar");
+    mvprintw(start_menu_y + 9, start_menu_x + 1, "Scoreboard");
+    mvprintw(start_menu_y + 10, start_menu_x + 1, "Instruções");
+    mvprintw(start_menu_y + 11, start_menu_x + 1, "Sair");
     
     wrefresh(menuWin);
     getch();    
