@@ -6,6 +6,7 @@
 int menu();
 void gameStart(Snake *ptrSnake, Food *ptrFood, char (*ptrBufferScreen)[WIDTH]);
 void drawScreen(Snake *ptrSnake, Food *ptrFood, char (*ptrBufferScreen)[WIDTH], int *score);
+void instructionsScreen();
 
 
 #endif

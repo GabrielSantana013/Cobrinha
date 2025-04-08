@@ -21,30 +21,36 @@ int main(){
     ptrGameOver = &gameOver;
     ptrBufferScreen = bufferScreen;
 
-    switch(menu()){
+    while (1)
+    {
+        switch (menu())
+        {
         case 1:
-        gameStart(ptrSnake, ptrFood, ptrBufferScreen);
-        drawScreen(ptrSnake, ptrFood, ptrBufferScreen, ptrScore);
-        while(!gameOver){
+            gameStart(ptrSnake, ptrFood, ptrBufferScreen);
             drawScreen(ptrSnake, ptrFood, ptrBufferScreen, ptrScore);
-            updateSnake(ptrSnake, ptrFood, ptrGameOver, ptrScore);
-            snakeMove(ptrSnake, ptrGameOver);
-            napms(DELAYMS); //delay
-        }
-        endwin();
+            while (!gameOver)
+            {
+                drawScreen(ptrSnake, ptrFood, ptrBufferScreen, ptrScore);
+                updateSnake(ptrSnake, ptrFood, ptrGameOver, ptrScore);
+                snakeMove(ptrSnake, ptrGameOver);
+                napms(DELAYMS); // delay
+            }
+            endwin();
+            refresh();
+            break;
         case 2:
-            //scoreboard
+            // scoreboard
             break;
         case 3:
-            //instruções
+            instructionsScreen();
+            endwin();
+            refresh();
             break;
         case 4:
             exit(0);
             break;
+        }
     }
-
-    
-    
 
     return 0;
 }
