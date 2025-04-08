@@ -3,7 +3,7 @@
 #ifndef VIEWS_H
 #define VIEWS_H
 
-void menu();
+int menu();
 void gameStart(Snake *ptrSnake, Food *ptrFood, char (*ptrBufferScreen)[WIDTH]);
 void drawScreen(Snake *ptrSnake, Food *ptrFood, char (*ptrBufferScreen)[WIDTH], int *score);
 

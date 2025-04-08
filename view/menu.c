@@ -9,7 +9,16 @@
 #define MENU_COLOR 1
 #define MENU_ITEM_COLOR 2
 
-void menu(){
+typedef enum{
+
+    JOGAR = 1,
+    SCOREBOARD,
+    INSTRUCOES,
+    SAIR
+}opcaoMenu;
+
+
+int menu(){
     initscr();
     cbreak(); 
     noecho();
@@ -43,7 +52,47 @@ void menu(){
     mvprintw(start_menu_y + 9, start_menu_x + 1, "Scoreboard");
     mvprintw(start_menu_y + 10, start_menu_x + 1, "Instruções");
     mvprintw(start_menu_y + 11, start_menu_x + 1, "Sair");
-    
+
+
+    opcaoMenu opcoes[4] = {JOGAR, SCOREBOARD, INSTRUCOES, SAIR};
+    int indice = 0;
+
+    //posiciona a seta no lado esquerdo do menu
+    do{
+        mvprintw(start_menu_y + 8, start_menu_x - 2, "->");
+        int choice = getch();
+        switch (choice) {
+            case KEY_UP:
+                if (start_menu_y > 8) {
+                    mvprintw(start_menu_y + 8, start_menu_x - 2, "  ");
+                    start_menu_y--;
+                }
+                if(indice > 0){
+                    indice--;
+                }
+                break;
+            case KEY_DOWN:
+                if (start_menu_y < 11) {
+                    mvprintw(start_menu_y + 8, start_menu_x - 2, "  ");
+                    start_menu_y++;
+                }
+                if(indice < 3){
+                    indice++;
+                }
+                break;
+            case '\n':
+            if (opcoes[indice] == SAIR) {
+                endwin();
+                exit(0);
+            } else {
+                endwin();
+                return opcoes[indice];
+            }
+                break;
+        }
+
+    }while(true);
+
     wrefresh(menuWin);
     getch();    
 
