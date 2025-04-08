@@ -31,7 +31,7 @@ int main(){
             snakeMove(ptrSnake, ptrGameOver);
             napms(DELAYMS); //delay
         }
-        endwin();        
+        endwin();
         case 2:
             //scoreboard
             break;
