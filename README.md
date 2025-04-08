@@ -60,22 +60,29 @@ O projeto está organizado da seguinte maneira:
 
 ```
 Cobrinha/
-
 ├── src/
-│   ├── nibbles.c
-├── functions/
-│   ├── drawScreen.c
-│   ├── functions.h
-│   ├── gameStart.c
+│   ├── nibbles.c        # Arquivo principal que inicia o jogo (nibbles.c)
+├── functions/           # Funções responsáveis pela lógica do jogo
 │   ├── snakeMove.c
 │   ├── spawnFood.c
 │   ├── updateSnake.c
+│   └── functions.h
+├── view/                # Parte visual (telas, desenhos e menu)
+│   ├── drawScreen.c
+│   ├── gameStart.c
+│   ├── instructionsScreen.c
+│   ├── menu.c
+│   ├── logo.c
+│   ├── logo.h
+│   └── view.h
 ├── Makefile
+├── nibbles.exe
 └── README.md
 ```
 
 - O diretório `src/` contém o arquivo-fonte em C.
 - O diretório `functions/` contém o Header com as structs e funções em C, além dos arquivos .c das funções.
+- O diretório `view/` contém as telas e as partes visuals do sistema
 - O `Makefile` é responsável por compilar o projeto e criar o executável `cobrinha`.
 
 ## Contato
@@ -83,5 +90,3 @@ Cobrinha/
 Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para abrir uma **issue** ou entrar em contato.
 
 ---
-
-Essa versão do README está mais completa, incluindo a dependência da **ncurses**, os comandos corretos de instalação, e a utilização do **Makefile** para facilitar a compilação. Espero que esteja de acordo agora!
